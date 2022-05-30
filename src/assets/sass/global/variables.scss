@@ -1,0 +1,12 @@
+$font-family: 'Open Sans', 'Arial', sans-serif;
+
+@mixin font($weight: normal, $size: 14px, $height: 21px) {
+  font-family: $font-family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+
+$dark: #4a4a4a;
+$light: #a0b0b9;
+$white: #ffffff;

@@ -1,0 +1,6 @@
+@import "../global/variables.scss";
+
+.todo__title {
+  @include font(normal, 14px, 21px);
+  color: $dark;
+}
