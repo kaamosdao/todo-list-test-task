@@ -11,9 +11,15 @@ serve:
 	npx cross-env NODE_ENV=development webpack serve --mode development --open
 
 lint:
-	npx eslint . --ext js,jsx
+	npx eslint . --ext ts,tsx
 
 push:
 	git add .
 	git commit -m "$(ARGS)"
 	git push
+
+docker-build:
+	docker build -t kaamosdao/todoapp .
+
+docker-run:
+	docker run -d -p 4242:4242 --rm --name todoapp kaamosdao/todoapp

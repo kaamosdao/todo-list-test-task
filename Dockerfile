@@ -12,4 +12,4 @@ ENV PORT 4242
 
 EXPOSE $PORT
 
-CMD ["make", "build"]
+CMD ["make", "serve"]

@@ -1,11 +1,13 @@
 import React from 'react';
+import TodoHandler from './components/TodoHandler';
+import TodoList from './components/TodoList';
 
 const App: React.FC = () => {
-
   return (
-    <div className="todo">
-      <h1 className="todo__title">TODO LIST</h1>
-    </div>
+    <>
+      <TodoHandler />
+      <TodoList />
+    </>
   );
 };
 

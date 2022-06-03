@@ -1,0 +1,15 @@
+@import "../global/variables.scss";
+
+.todo-list-item__input:checked {
+  background-color: $green;
+  border-color: $green;
+}
+
+.todo-list-item__input:checked + .todo-list-item__label {
+  text-decoration-line: line-through;
+}
+
+
+.todo-list-item__label {
+  color: $dark;
+}

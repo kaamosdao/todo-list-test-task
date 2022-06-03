@@ -1,5 +1,9 @@
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "global/fonts.scss";
 @import "global/variables.scss";
 @import "global/global.scss";
 
-@import "./components/todo.scss";
+@import "./components/page-header.scss";
+@import "./components/input-group.scss";
+@import "./components/todo-list-item.scss";
