@@ -25,15 +25,19 @@
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "@types/react-redux": "^7.1.24",
+    "@types/yup": "^0.29.14",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0-beta1",
     "bootstrap-icons": "^1.8.3",
+    "formik": "^2.2.9",
+    "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
     "typescript": "^4.6.4",
-    "webpack": "^5.72.1"
+    "webpack": "^5.72.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.18.0",

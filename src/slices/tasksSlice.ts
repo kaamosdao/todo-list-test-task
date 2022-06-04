@@ -1,6 +1,6 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 import type { RootState } from './index';
-import ITask from '../interfaces';
+import { ITask } from '../interfaces';
 
 const tasksAdapter = createEntityAdapter<ITask>();
 
@@ -14,6 +14,9 @@ const tasksSlice = createSlice({
   },
 });
 
-export const tasksSelectors = tasksAdapter.getSelectors<RootState>((state) => state.tasks);
+export const { addTask } = tasksSlice.actions;
+
+export const tasksSelectors = tasksAdapter
+  .getSelectors<RootState>((state: RootState) => state.tasks);
 
 export default tasksSlice.reducer;
