@@ -3,9 +3,9 @@ import FilterSwitch from './FilterSwitch';
 
 const FilterGroup: React.FC = () => {
   return (
-    <fieldset className="form__filter d-flex justify-content-around mb-5">
-      <FilterSwitch name="completed tasks" />
-      <FilterSwitch name="outstanding tasks" />
+    <fieldset className="filter d-flex justify-content-around mb-5">
+      <FilterSwitch name="completed tasks" id="flexSwitchCheckCompleted" />
+      <FilterSwitch name="outstanding tasks" id="flexSwitchCheckOutstanding" />
     </fieldset>
   );
 };

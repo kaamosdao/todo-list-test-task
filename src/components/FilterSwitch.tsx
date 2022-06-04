@@ -1,15 +1,15 @@
 import React from 'react';
-import TaskListProps from '../interfaces';
+import IFilterSwitch from '../interfaces';
 
-const FilterSwitch: React.FC<TaskListProps> = ({ name }) => {
+const FilterSwitch: React.FC<IFilterSwitch> = ({ name, id }) => {
   return (
     <div className="form-check form-switch">
       <input
-        className="form-check-input"
+        className="form-check-input form__switch-input filter__switch-input"
         type="checkbox"
-        id="flexSwitchCheckDefault"
+        id={id}
       />
-      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
+      <label className="form-check-label filter__switch-label" htmlFor={id}>
         {name}
       </label>
     </div>
