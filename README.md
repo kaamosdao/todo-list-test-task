@@ -3,7 +3,7 @@
 
 [Тестовое задание на вакансию "Frontend Developer" (JS, React)](https://drive.google.com/file/d/17i3HWkCW8OdvmczEcE2p3q-ljU-2sAWz/view?usp=sharing)
 
-[Click here to try it! Deployed on Vercel.]()
+[Click here to try it! Deployed on Vercel.](https://todo-list-test-task-kaamosdao.vercel.app/)
 
 #
 ## Install
