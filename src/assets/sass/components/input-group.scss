@@ -5,5 +5,21 @@
 }
 
 .input-group__button {
+  color: $white;
+  background-color: $green;
+  border: none;
+}
+
+.input-group__button:hover {
   color: $dark;
+  background-color: $green;
+  opacity: 0.8;
+}
+
+.input-group__button:focus,
+.input-group__button:active,
+.input-group__button:focus:active {
+  background-color: $green;
+  border: none;
+  box-shadow: 0px 0px 0px 4px $focus;
 }

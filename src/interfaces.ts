@@ -1,22 +1,28 @@
 import { FormikProps } from 'formik';
 
-interface IFilterSwitch {
-  readonly name: string,
-  readonly id: string,
+export type ITaskStatus = 'all' | 'completed' | 'unfinished';
+
+interface IFilterItem {
+  readonly name: ITaskStatus;
+  readonly id: string;
 }
 
 export interface ITask {
-  readonly id: string,
-  readonly name: string,
-  readonly status: string,
+  readonly id: string;
+  readonly name: string;
+  readonly status: string;
+}
+
+export interface IFilter {
+  readonly type: string;
 }
 
 export interface IFormValue {
-  readonly task: string,
+  readonly task: string;
 }
 
 export interface IInput {
-  readonly formik: FormikProps<IFormValue>,
+  readonly formik: FormikProps<IFormValue>;
 }
 
-export default IFilterSwitch;
+export default IFilterItem;

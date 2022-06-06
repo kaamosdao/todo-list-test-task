@@ -35,6 +35,7 @@ rules:
   functional/no-try-statement: 0
   functional/no-throw-statement: 0
   functional/no-return-void: 0
+  no-param-reassign: ["error", { "props": false }]
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
   react/jsx-filename-extension: [1, { "extensions": [".ts", ".tsx"] }]
   react/function-component-definition: [2, { namedComponents: "arrow-function" }]

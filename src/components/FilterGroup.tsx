@@ -1,10 +1,11 @@
 import React from 'react';
-import FilterSwitch from './FilterSwitch';
+import FilterItem from './FilterItem';
 
 const FilterGroup: React.FC = () => (
   <fieldset className="filter d-flex justify-content-around mb-5">
-    <FilterSwitch name="completed tasks" id="flexSwitchCheckCompleted" />
-    <FilterSwitch name="outstanding tasks" id="flexSwitchCheckOutstanding" />
+    <FilterItem name="all" id="radioAll" />
+    <FilterItem name="completed" id="radioCompleted" />
+    <FilterItem name="unfinished" id="radioUnfinished" />
   </fieldset>
 );
 

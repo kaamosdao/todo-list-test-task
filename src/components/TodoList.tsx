@@ -2,15 +2,24 @@ import React from 'react';
 import { useAppSelector } from '../hooks/hooks';
 import { ITask } from '../interfaces';
 import { tasksSelectors } from '../slices/tasksSlice';
-import Checkbox from './Checkbox';
+import TodoItem from './TodoItem';
+
+const filterTasks = (tasks: ReadonlyArray<ITask>, filterType: string) => {
+  if (filterType === 'all') {
+    return tasks;
+  }
+  return tasks.filter((task) => task.status === filterType);
+};
 
 const TodoList: React.FC = () => {
   const tasks: ReadonlyArray<ITask> = useAppSelector(tasksSelectors.selectAll);
+  const filterType: string = useAppSelector((state) => state.filter.type);
+  const filteredTasks = filterTasks(tasks, filterType);
   return (
     <ul className="list-group todo-list w-75 mx-auto">
-      {tasks.map((task: ITask) => (
+      {filteredTasks.map((task: ITask) => (
         <li className="list-group-item" key={task.id}>
-          <Checkbox id={task.id} name={task.name} status={task.status} />
+          <TodoItem id={task.id} name={task.name} status={task.status} />
         </li>
       ))}
     </ul>

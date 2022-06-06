@@ -11,10 +11,11 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     addTask: tasksAdapter.addOne,
+    updateTask: tasksAdapter.updateOne,
   },
 });
 
-export const { addTask } = tasksSlice.actions;
+export const { addTask, updateTask } = tasksSlice.actions;
 
 export const tasksSelectors = tasksAdapter
   .getSelectors<RootState>((state: RootState) => state.tasks);

@@ -3,7 +3,7 @@ import { useFormik, FormikProps, FormikHelpers } from 'formik';
 import _ from 'lodash';
 import { useAppDispatch } from '../hooks/hooks';
 import { addTask } from '../slices/tasksSlice';
-import { ITask, IFormValue } from '../interfaces';
+import { ITask, IFormValue, ITaskStatus } from '../interfaces';
 import validationSchema from '../validationSchema';
 import InputGroup from './InputGroup';
 
@@ -13,10 +13,11 @@ const Form: React.FC = () => {
     initialValues: { task: '' },
     validationSchema,
     onSubmit: (values: IFormValue, actions: FormikHelpers<IFormValue>): void => {
+      const status: ITaskStatus = 'unfinished';
       const task: ITask = {
         id: _.uniqueId(),
         name: values.task,
-        status: 'unfinished',
+        status,
       };
       dispatch(addTask(task));
       actions.resetForm();
@@ -28,26 +29,6 @@ const Form: React.FC = () => {
       <InputGroup formik={formik} />
     </form>
   );
-  // const initialValues: IFormValue = { task: '' };
-  // return (
-  //   <Formik
-  //     initialValues={initialValues}
-  //     onSubmit={(values, actions): void => {
-  //       const task: ITask = {
-  //         id: _.uniqueId(),
-  //         name: values.task,
-  //         status: 'unfinished',
-  //       };
-  //       dispatch(addTask(task));
-  //       actions.resetForm();
-  //     }}
-  //   >
-  //     {(formik) => (
-  //       <Form className="form needs-validation">
-  //         <InputGroup formik={formik} />
-  //       </Form>
-  //     )}
-  //   </Formik>
 };
 
 export default Form;
