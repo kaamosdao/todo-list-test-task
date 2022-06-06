@@ -2,8 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 
@@ -29,17 +27,6 @@ module.exports = {
       template: 'index.html',
     }),
     new MiniCssExtractPlugin(),
-    // new CopyPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/assets/img'),
-    //       to: path.resolve(__dirname, 'dist/public/assets/img'),
-    //     },
-    //   ],
-    //   options: {
-    //     concurrency: 100,
-    //   },
-    // }),
   ],
   module: {
     rules: [
@@ -76,48 +63,6 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         type: 'asset',
       },
-    ],
-  },
-  optimization: {
-    minimizer: [
-      '...',
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              [
-                'svgo',
-                {
-                  plugins: [
-                    {
-                      name: 'preset-default',
-                      params: {
-                        overrides: {
-                          convertShapeToPath: {
-                            convertArcs: true,
-                          },
-                          convertPathData: false,
-                        },
-                      },
-                    },
-                    {
-                      name: 'removeViewBox',
-                      active: false,
-                    },
-                    {
-                      name: 'addAttributesToSVGElement',
-                      params: {
-                        attributes: [{ xmlns: 'http://www.w3.org/2000/svg' }],
-                      },
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-      }),
     ],
   },
 };
