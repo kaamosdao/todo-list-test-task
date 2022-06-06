@@ -14,7 +14,7 @@ export interface ITask {
 }
 
 export interface IFilter {
-  readonly type: string;
+  readonly type: ITaskStatus;
 }
 
 export interface IFormValue {

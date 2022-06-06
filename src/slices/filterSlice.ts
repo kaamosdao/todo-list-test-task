@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IFilter } from '../interfaces';
+import { IFilter, ITaskStatus } from '../interfaces';
 
 const initialState: IFilter = {
   type: 'all',
@@ -9,7 +9,7 @@ const filterSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    updateFilter: (state, action: PayloadAction<string>) => {
+    updateFilter: (state, action: PayloadAction<ITaskStatus>) => {
       state.type = action.payload;
     },
   },
