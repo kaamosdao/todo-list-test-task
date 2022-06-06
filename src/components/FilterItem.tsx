@@ -11,14 +11,14 @@ const FilterItem: React.FC<IFilterItem> = ({ name, id }) => {
   return (
     <div className="form-check">
       <input
-        className="form-check-input"
+        className="form-check-input filter__input"
         type="radio"
         name="taskFilter"
         id={id}
         defaultChecked={name === 'all'}
         onChange={onChange}
       />
-      <label className="form-check-label" htmlFor={id}>
+      <label className="form-check-label filter__label" htmlFor={id}>
         {name}
       </label>
     </div>
