@@ -12,7 +12,7 @@ const Form: React.FC = () => {
   const formik: FormikProps<IFormValue> = useFormik<IFormValue>({
     initialValues: { task: '' },
     validationSchema,
-    onSubmit: (values: IFormValue, actions: FormikHelpers<IFormValue>): void => {
+    onSubmit: (values: IFormValue, actions: Readonly<FormikHelpers<IFormValue>>): void => {
       const status: ITaskStatus = 'unfinished';
       const task: ITask = {
         id: _.uniqueId(),
