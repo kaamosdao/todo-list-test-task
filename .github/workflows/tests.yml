@@ -25,5 +25,7 @@ jobs:
           cache: npm
       - name: Install
         run: make install
+      - name: Download browsers for playwright
+        run: npx playwright install
       - name: Run test
         run: make test
