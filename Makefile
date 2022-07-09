@@ -23,3 +23,7 @@ docker-build:
 
 docker-run:
 	docker run -d -p 4242:4242 --rm --name todoapp kaamosdao/todoapp
+
+test:
+	npm run test
+	
