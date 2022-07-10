@@ -17,11 +17,11 @@ const TodoItem: React.FC<ITask> = ({ id, name, status }) => {
         className="form-check-input todo-list-item__input"
         type="checkbox"
         value=""
-        id={id}
+        id={`todo${id}`}
         onChange={handleChange}
         checked={status === 'completed'}
       />
-      <label className="form-check-label todo-list-item__label ms-2" htmlFor={id}>
+      <label className="form-check-label todo-list-item__label ms-2" htmlFor={`todo${id}`}>
         {name}
       </label>
     </div>
